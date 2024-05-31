@@ -1,0 +1,13 @@
+<odoo>
+    <record id="view_product_template_form" model="ir.ui.view">
+        <field name="name">product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <header>
+                <button name="import_products_from_fake_store" string="Import Products"
+                    type="object" class="oe_highlight" />
+            </header>
+        </field>
+    </record>
+</odoo>
