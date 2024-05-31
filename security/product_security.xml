@@ -1,0 +1,9 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Definición del grupo -->
+        <record id="group_product_integration" model="res.groups">
+            <field name="name">Product Integration Access</field>
+            <field name="category_id" ref="base.module_category_product" />
+        </record>
+    </data>
+</odoo>
