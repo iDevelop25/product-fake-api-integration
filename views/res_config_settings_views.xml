@@ -1,0 +1,21 @@
+<odoo>
+    <!-- Vista para el res.config.settings -->
+    <record id="view_res_config_settings_fake_api" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.fake.api</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="0" />
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position="after">
+                <div id="fake_store_api_settings">
+                    <block title="Fake Store API" name="fake_store_api_setting_container">
+                        <setting id="use_fake_api_setting" string="Use Fake Store API"
+                            help="Enable or disable the integration with the Fake Store API">
+                            <field name="use_fake_api" />
+                        </setting>
+                    </block>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

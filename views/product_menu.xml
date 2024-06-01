@@ -1,11 +1,4 @@
 <odoo>
-    <!-- Acción para mostrar la vista de productos -->
-    <!-- <record id="action_product_template_form" model="ir.actions.act_window">
-        <field name="name">Products</field>
-        <field name="res_model">product.template</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="product.product_template_only_form_view" />
-    </record> -->
     <!-- Acción para el wizard -->
     <record id="action_import_wizard" model="ir.actions.act_window">
         <field name="name">Import Products</field>
@@ -18,11 +11,7 @@
     <menuitem id="menu_product_root" name="Product Integration" sequence="1"
         groups="product_fake_api_integration.group_product_integration" />
 
-    <!-- Submenú para productos -->
-    <!-- <menuitem id="menu_product_template" name="Products" parent="menu_product_root"
-        action="action_product_template_form" sequence="10"
-        groups="product_fake_api_integration.group_product_integration" /> -->
-    <!-- Submenú para el wizard -->
+    <!-- Menú para el wizard -->
     <menuitem id="menu_import_wizard" name="Import Products" parent="menu_product_root"
         action="product_fake_api_integration.action_import_wizard" sequence="20"
         groups="product_fake_api_integration.group_product_integration" />
