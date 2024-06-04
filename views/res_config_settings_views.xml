@@ -13,6 +13,10 @@
                             help="Enable or disable the integration with the Fake Store API">
                             <field name="use_fake_api" />
                         </setting>
+                        <setting id="fake_api_endpoint_setting" string="Fake Store API Endpoint"
+                            help="Set the endpoint for the Fake Store API">
+                            <field name="fake_api_endpoint" />
+                        </setting>
                     </block>
                 </div>
             </xpath>
