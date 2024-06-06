@@ -7,6 +7,7 @@
             <xpath expr="//field[@name='categ_id']" position="after">
                 <field name="rating_rate" />
                 <field name="rating_count" />
+                <field name="imported_from_fake_store" invisible="1" />
             </xpath>
         </field>
     </record>

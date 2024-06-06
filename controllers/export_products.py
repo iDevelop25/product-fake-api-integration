@@ -8,11 +8,14 @@ class ExportProductsController(http.Controller):
 
     @http.route("/export/products", type="http", auth="public")
     def export_products(self):
-        # Usar el superusuario para realizar la consulta
+        """
+        Exporta a un archivo Excel los productos que han sido importados o actualizados desde la API de Fake Store.
+        """
+        # Usar el superusuario para realizar la consulta de productos importados
         products = (
             request.env["product.template"]
             .sudo()
-            .search([("default_code", "!=", False)])
+            .search([("imported_from_fake_store", "=", True)])
         )
 
         # Crear un libro de trabajo y una hoja
@@ -64,4 +67,7 @@ class ExportProductsController(http.Controller):
 
     @http.route("/web/export/products/page", type="http", auth="public", website=True)
     def export_products_page(self):
+        """
+        Renderiza la página web que contiene el botón para exportar los productos a un archivo Excel.
+        """
         return request.render("product_fake_api_integration.export_products_page")

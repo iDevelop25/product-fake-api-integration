@@ -7,9 +7,13 @@ import base64
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    # Definir los nuevos campos para el rating
+    # Nuevos campos para almacenar la calificación del producto
     rating_rate = fields.Float(string="Rating Rate")
     rating_count = fields.Integer(string="Rating Count")
+    # Nuevo campo para almacenar la calificación del producto
+    imported_from_fake_store = fields.Boolean(
+        string="Imported from Fake Store", default=False
+    )
 
     @api.model
     def import_products_from_fake_store(self, *args, **kwargs):
@@ -34,21 +38,26 @@ class ProductTemplate(models.Model):
         if response.status_code == 200:
             products = response.json()
             for product in products:
+                # Buscar un producto existente con el mismo ID
                 existing_product = self.search(
-                    [("default_code", "=", str(product["id"]))], limit=1
+                    [("default_code", "=", product["id"])], limit=1
                 )
+                # Obtener y codificar la imagen del producto
                 image_data = self._get_image_from_url(product["image"])
+                # Preparar los datos del producto
                 product_data = {
                     "name": product["title"],
                     "list_price": product["price"],
                     "type": "product",
-                    "default_code": str(product["id"]),
+                    "default_code": product["id"],
                     "description": product["description"],
                     "image_1920": image_data,
                     "categ_id": self._get_category_id(product["category"]),
                     "rating_rate": product["rating"]["rate"],
                     "rating_count": product["rating"]["count"],
+                    "imported_from_fake_store": True,
                 }
+                # Si el producto existe, se actualiza; de lo contrario, se crea uno nuevo
                 if existing_product:
                     existing_product.write(product_data)
                 else:
