@@ -23,7 +23,16 @@ class ExportProductsController(http.Controller):
         header_style = xlwt.easyxf("font: bold 1")
 
         # Escribir las cabeceras
-        headers = ["ID", "Nombre", "Precio", "Descripción", "Cantidad en Stock"]
+        headers = [
+            "ID",
+            "Nombre",
+            "Precio",
+            "Descripción",
+            "Categoría",
+            "Rating",
+            "Rating Count",
+            "Cantidad en Stock",
+        ]
         for col, header in enumerate(headers):
             sheet.write(0, col, header, header_style)
 
@@ -33,7 +42,10 @@ class ExportProductsController(http.Controller):
             sheet.write(row, 1, product.name)
             sheet.write(row, 2, product.list_price)
             sheet.write(row, 3, product.description)
-            sheet.write(row, 4, product.qty_available)
+            sheet.write(row, 4, product.categ_id.name)
+            sheet.write(row, 5, product.rating_rate)
+            sheet.write(row, 6, product.rating_count)
+            sheet.write(row, 7, product.qty_available)
 
         # Guardar el archivo en un buffer
         buffer = io.BytesIO()

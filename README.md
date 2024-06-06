@@ -43,6 +43,12 @@ Una vez habilitados los permisos estará disponible el menu
 
 ![Imagen importación modulo](./static/img/8.png)
 
+### Detalles de los productos
+
+Una vez importados los productos puede ingresar a la vista de cada producto y visualizar todos los campos importados
+
+![](./static/img/11.png)
+
 ### Website para descargar archivo Excel con listado de productos
 
 Ir a la siguiente url

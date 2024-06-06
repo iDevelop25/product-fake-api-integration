@@ -14,6 +14,7 @@
         "views/product_menu.xml",
         "views/res_config_settings_views.xml",
         "views/website_export_template.xml",
+        "views/product_template_views.xml",
     ],
     "installable": True,
     "application": True,
