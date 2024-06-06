@@ -3,8 +3,10 @@
 ### Modulos requeridos:
 
 - Inventario (stock)
+- Website (website)
 
 ![Inventario](./static/img/1.png)
+![Website](./static/img/9.png)
 
 ### Instalando Modulo "Product Fake API Integration"
 
@@ -40,3 +42,13 @@ Una vez habilitados los permisos estará disponible el menu
 ![Imagen menu modulo](./static/img/7.png)
 
 ![Imagen importación modulo](./static/img/8.png)
+
+### Website para descargar archivo Excel con listado de productos
+
+Ir a la siguiente url
+
+> http://tudominio/web/export/products/page
+
+Dar clic en el boton "Descargar Productos en Excel"
+
+![website descarga](./static/img/10.png)
