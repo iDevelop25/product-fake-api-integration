@@ -13,6 +13,7 @@
         "views/import_wizard_views.xml",
         "views/product_menu.xml",
         "views/res_config_settings_views.xml",
+        "views/website_export_template.xml",
     ],
     "installable": True,
     "application": True,

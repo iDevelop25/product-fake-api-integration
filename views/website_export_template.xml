@@ -1,0 +1,12 @@
+<odoo>
+    <template id="export_products_page" name="Export Products Page">
+        <t t-call="website.layout">
+            <div class="container my-5 text-center">
+                <h1>Exportar Productos</h1>
+                <p>Presione el botón de abajo para descargar un archivo Excel con los productos
+                    importados desde Fake Store.</p>
+                <a class="btn btn-primary" href="/export/products">Descargar Productos en Excel</a>
+            </div>
+        </t>
+    </template>
+</odoo>
